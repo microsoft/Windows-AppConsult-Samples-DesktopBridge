@@ -1,0 +1,21 @@
+﻿<Window x:Class="SqlLite.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SqlLite.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="825">
+    <StackPanel Margin="4,4,4,4">
+        <TextBlock Text="Windows AppConsult weather services" Foreground="Gray" FontFamily="Segoe UI Light" FontSize="24" HorizontalAlignment="Center" Margin="0,20,0,10" />
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center" >
+            <TextBox Text="City" x:Name="TbCity" Width="400" />
+            <Button Content="Get Weather" x:Name="BtnGetWeather" Click="BtnGetWeather_OnClick" Width="200" Background="Gray" Margin="50, 30, 0, 0" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center" >
+            <Image x:Name="IMGWeatherIcon" Height="50" Width="50" />
+            <TextBlock x:Name="TbResult" Margin="50,10,0,0" Text="Press the button." />
+        </StackPanel>
+        <Button HorizontalAlignment="Center" x:Name="BtnSaveToDb" Content="Save to database" Margin="20,20,20,20" Click="BtnSaveToDb_OnClick" />
+    </StackPanel>
+</Window>
