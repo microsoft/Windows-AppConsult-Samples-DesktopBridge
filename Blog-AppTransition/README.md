@@ -2,7 +2,7 @@
 
 This sample contains the same applications packaged with a MSI installer and with a Desktop Bridge app package. Thanks to the app transition extension and the tools provided by Advanced Installer Express, the user is automatically transitioned to the Store version of the app when he installs it on a machine where the desktop version is already installed.
 
-This sample is a companion of the following blog post: 
+This sample is a companion of the following blog post: http://blogs.msdn.microsoft.com/appconsult/2018/04/30/handling-app-transition-with-advanced-installer-express/
 
 # Contributing
 
