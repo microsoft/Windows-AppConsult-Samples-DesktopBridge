@@ -1,0 +1,9 @@
+{
+  "applications": [
+    {
+      "id": "PSFDemo",
+      "executable": "PSFDemo/PSFDemo.exe",
+      "workingDirectory": "PSFDemo/"
+    }
+  ]
+}
