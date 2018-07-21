@@ -26,14 +26,12 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PSFDemo.Fixups.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="Fixups.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\bin\FileRedirectionShim32.dll" />
   </ItemGroup>
 </Project>

@@ -22,6 +22,8 @@ namespace PSFDemo
             Config config = JsonConvert.DeserializeObject<Config>(json);
             AppName.Text = config.AppName;
             Version.Text = config.Version;
+
+            MessageBox.Show("Configuration has been read successfully", "PSFDemo");
         }
 
         private void OnWriteFile(object sender, RoutedEventArgs e)
