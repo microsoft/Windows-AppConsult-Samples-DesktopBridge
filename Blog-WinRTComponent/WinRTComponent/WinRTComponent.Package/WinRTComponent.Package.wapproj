@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
     <VisualStudioVersion>15.0</VisualStudioVersion>
@@ -34,21 +34,20 @@
   </PropertyGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
-    <ProjectGuid>035e3cc9-78ef-4021-a261-ffdeec660044</ProjectGuid>
+    <ProjectGuid>53c2c27c-e604-4e94-b563-49d29768307b</ProjectGuid>
     <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>PSFDemo.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <EntryPointProjectUniqueName>..\PSFDemo\PSFDemo.csproj</EntryPointProjectUniqueName>
+    <PackageCertificateKeyFile>WinRTComponent.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <EntryPointProjectUniqueName>..\WinRTComponent.WPF\WinRTComponent.WPF.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="PSFDemo.Package_TemporaryKey.pfx" />
+    <None Include="WinRTComponent.Package_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.json" />
     <Content Include="Images\LockScreenLogo.scale-200.png" />
     <Content Include="Images\Square150x150Logo.scale-200.png" />
     <Content Include="Images\Square44x44Logo.scale-200.png" />
@@ -57,18 +56,8 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PSFDemo.Launcher\PSFDemo.Launcher.vcxproj" />
-    <ProjectReference Include="..\PSFDemo\PSFDemo.csproj" />
+    <ProjectReference Include="..\WinRTComponent.UWPHead\WinRTComponent.UWPHead.csproj" />
+    <ProjectReference Include="..\WinRTComponent.WPF\WinRTComponent.WPF.csproj" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-  <!--Remove SourceProject for PSF content to ensure package root layout-->
-  <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
-    <ItemGroup>
-      <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
-        <SourceProject Condition="'%(_FilteredNonWapProjProjectOutput.SourceProject)'=='PSFDemo.Launcher'" />
-      </FilteredNonWapProjProjectOutput>
-      <_FilteredNonWapProjProjectOutput Remove="@(_FilteredNonWapProjProjectOutput)" />
-      <_FilteredNonWapProjProjectOutput Include="@(FilteredNonWapProjProjectOutput)" />
-    </ItemGroup>
-  </Target>
 </Project>
