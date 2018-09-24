@@ -10,6 +10,10 @@ public class ClickToUseDll : MonoBehaviour
     extern static string Notify(string toastTitle, string toastContent);
 
     [DllImport("dotNETClassLibraryUsingUWPAPIs")]
+    extern static string NotifyWithDelay(string toastTitle, string toastContent, int delayinMilliseconds);
+    
+
+    [DllImport("dotNETClassLibraryUsingUWPAPIs")]
     extern static string UpdatePrimaryTile(string text, int durationSeconds);
 
     // Use this for initialization
@@ -24,7 +28,13 @@ public class ClickToUseDll : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             string output = Notify("Toast title",
-                "Unity toast sent at " + System.DateTime.Now.ToLongTimeString());
+                 "Unity toast sent at " + System.DateTime.Now.ToLongTimeString());
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            string output = NotifyWithDelay("Schedule Toast title",
+                "Unity toast sent at " + System.DateTime.Now.ToLongTimeString(), 5000);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
