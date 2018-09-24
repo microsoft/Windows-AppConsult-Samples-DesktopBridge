@@ -56,28 +56,22 @@ namespace dotNETClassLibraryUsingUWPAPIs
 
 
         private static ScheduledToastNotification CreateAScheduleToast(
-                    string toastTitle, 
-                    string toastContent, 
+                    string toastTitle,
+                    string toastContent,
                     DateTime scheduleTime)
         {
 
             var doc = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
-            
-            var binding = doc.SelectSingleNode("//binding");
 
-            var el = doc.CreateElement("text");
-            el.InnerText = toastTitle;
-
-            binding.AppendChild(el);
-
-            el = doc.CreateElement("text");
-            el.InnerText = toastContent + " (Scheduled)";
-            binding.AppendChild(el);
+            var strings = doc.GetElementsByTagName("text");
+            strings[0].AppendChild(doc.CreateTextNode(toastTitle));
+            strings[1].AppendChild(doc.CreateTextNode("Scheduled: " + toastContent));
 
             var toast = new ScheduledToastNotification(doc, scheduleTime);
             return toast;
         }
 
+        [DllExport(CallingConvention.StdCall)]
         public static string NotifyWithDelay(string toastTitle, string toastContent, int delayinMilliseconds)
         {
             try
@@ -85,7 +79,7 @@ namespace dotNETClassLibraryUsingUWPAPIs
                 var scheduleTime = DateTime.Now.AddMilliseconds(delayinMilliseconds);
                 ScheduledToastNotification toast = CreateAScheduleToast(toastTitle, toastContent, scheduleTime);
 
-               
+
                 // Add to the schedule.
                 ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
             }
