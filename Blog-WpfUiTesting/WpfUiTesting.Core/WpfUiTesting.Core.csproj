@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="..\WpfUiTesting.Wpf\App.xaml" />
+    <Compile Include="..\WpfUiTesting.Wpf\App.xaml.cs" />
+
+    <Page Include="..\WpfUiTesting.Wpf\MainWindow.xaml" />
+    <Compile Include="..\WpfUiTesting.Wpf\MainWindow.xaml.cs" />
+  </ItemGroup>
+
+</Project>
