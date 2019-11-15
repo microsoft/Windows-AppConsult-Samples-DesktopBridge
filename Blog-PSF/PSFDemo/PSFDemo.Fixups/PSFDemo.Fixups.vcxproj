@@ -23,32 +23,32 @@
     <ProjectGuid>{4FCEE177-B131-4107-AA5B-D2B85B55C22D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>PSFDemoFixups</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -164,19 +164,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\bin\FileRedirectionShim32.dll">
+    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\bin\FileRedirectionFixup32.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\bin\FileRedirectionFixup64.dll">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\build\native\Microsoft.PackageSupportFramework.targets" Condition="Exists('..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\build\native\Microsoft.PackageSupportFramework.targets')" />
+    <Import Project="..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\build\native\Microsoft.PackageSupportFramework.targets" Condition="Exists('..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\build\native\Microsoft.PackageSupportFramework.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\build\native\Microsoft.PackageSupportFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\build\native\Microsoft.PackageSupportFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\build\native\Microsoft.PackageSupportFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\build\native\Microsoft.PackageSupportFramework.targets'))" />
   </Target>
 </Project>

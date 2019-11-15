@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.180713.1\bin\FileRedirectionShim32.dll" />
+    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\bin\FileRedirectionFixup64.dll" />
+    <None Include="..\packages\Microsoft.PackageSupportFramework.1.0.191017.1\bin\FileRedirectionFixup32.dll" />
   </ItemGroup>
 </Project>

@@ -9,9 +9,9 @@
   "processes": [
     {
       "executable": "PSFDemo",
-      "shims": [
+      "fixups": [
         {
-          "dll": "FileRedirectionShim.dll",
+          "dll": "FileRedirectionFixup.dll",
           "config": {
             "redirectedPaths": {
               "packageRelative": [
@@ -23,12 +23,6 @@
                 }
               ]
             }
-          }
-        },
-        {
-          "dll": "PSFDemo.Fixups.dll",
-          "config": {
-            "title": "Sample title"
           }
         }
       ]
