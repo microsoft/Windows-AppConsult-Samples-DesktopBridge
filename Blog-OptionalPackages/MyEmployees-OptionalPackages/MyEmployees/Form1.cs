@@ -100,15 +100,15 @@ namespace ExportDataLibrary
                 {
                     if (package.Id.Name.Contains("ExportPlugin"))
                     {
-                        var file = await package.InstalledLocation.GetFileAsync("VFS\\ProgramFilesX86\\Contoso\\MyEmployees\\Plugins\\ExportDataLibrary.dll");
+                        var file = await package.InstalledLocation.GetFileAsync("ExportDataLibrary.dll");
                         plugin = LoadAssembly(file.Path);
-                        exportAsCsvButton.Visible = true;
+                        exportMenu.Visible = true;
                     }
                 }
             }
             else
             {
-                exportAsCsvButton.Visible = false;
+                exportMenu.Visible = false;
             }
         }
     }
