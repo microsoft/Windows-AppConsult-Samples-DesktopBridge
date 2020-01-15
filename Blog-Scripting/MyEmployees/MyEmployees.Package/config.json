@@ -1,0 +1,17 @@
+{
+  "applications": [
+    {
+      "id": "App",
+      "executable": "MyEmployees/MyEmployees.exe",
+      "workingDirectory": "MyEmployees",
+      "stopOnScriptError": false,
+      "startScript": {
+        "scriptPath": "CopyDatabase.ps1",
+        "runInVirtualEnvironment": true,
+        "showWindow": true,
+        "waitForScriptToFinish": true,
+        "runOnce": true
+      }
+    }
+  ]
+}
