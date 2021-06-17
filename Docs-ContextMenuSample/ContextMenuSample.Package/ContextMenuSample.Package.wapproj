@@ -100,7 +100,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ContextMenuSample.Package_TemporaryKey.pfx" />
     <Content Include="ExplorerCommandVerb.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
